@@ -1,10 +1,28 @@
 {
   "meta": {
-    "username": "put your username here",
-    "repositoryName": "put your repository name here",
-    "branch": "master"
+    "username": "crotel",
+    "repositoryName": "crotel.github.com",
+    "branch": "master",
+    "cname": "www.crotel.co"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
+  },
+  "urls": {
+    "site": "http://www.crotel.co",
+    "hubpress": "http://www.crotel.co",
+    "theme": "//www.crotel.co/themes/casper",
+    "images": "http://www.crotel.co/images"
+  },
+  "initialisationConfigComponent": {
+    "name": "initialise-configuration",
+    "computed": {},
+    "methods": {},
+    "staticRenderFns": [
+      null,
+      null,
+      null
+    ],
+    "_Ctor": {}
   }
 }
