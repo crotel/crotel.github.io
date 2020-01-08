@@ -1,13 +1,33 @@
 <!DOCTYPE html>
+<!--<html manifest="./offline.appcache">-->
 <html>
 
 <head>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js').catch(function(error) {
+                console.error(error);
+            });
+        }
+    </script>
     <!-- Site made with Mobirise Website Builder v4.11.6, https://mobirise.com -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <link rel="shortcut icon" href="assets/images/crotel-1.svg" type="image/x-icon">
+    <!--<link rel="shortcut icon" href="assets/images/crotel-1.svg" type="image/x-icon">-->
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#595959">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
     <meta name="description" content="">
+    <!-- set viewport width to 660px and disable zooming/scaling -->
+      <meta name="viewport" content="width=100%,user-scalable=no">
+      <!-- tell iOS devices that this app can work in full screen mode. No need for navbars -->
+      <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>CROTEL</title>
     <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -19,8 +39,10 @@
     <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
     <script src="/assets/web/assets/js/main.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <link href='https://fonts.loli.net/css?family=Roboto+Slab:200&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">-->
+    <link rel="stylesheet" href="./assets/animate/animate.min.css">
+    <!--<link href='https://fonts.loli.net/css?family=Roboto+Slab:200&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>-->
+    <link href='./assets/fonts/font.css' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -29,7 +51,7 @@
         <div class="container">
             <div class="row justify-content-md-center">
                 <div class="mbr-white col-md-10">
-                    
+
                     <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
                         <iframe href="logo.html" style="border: none;"></iframe><br>
                         <span style="font-weight: normal;">
