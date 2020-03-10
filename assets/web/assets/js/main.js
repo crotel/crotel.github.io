@@ -1,4 +1,4 @@
-fetch('https://crotel.ghost.io/ghost/api/v3/content/posts/?key=13a37eeee3647d0acb08e8062e&include=authors&filter=primary_tag:main_timeline&formats=plaintext&order=published_at%20DESC&limit=all')
+fetch('https://cro.tel/data&formats=plaintext&order=published_at%20DESC&limit=all' )
     .then(function (response) {
         if (!response.ok) {
             throw new Error("HTTP error, status = " + response.status);
@@ -48,4 +48,4 @@ fetch('https://crotel.ghost.io/ghost/api/v3/content/posts/?key=13a37eeee3647d0ac
             document.createTextNode('Error: ' + error.message)
         );
         document.body.insertBefore(p, fgpList);
-    });
+});
