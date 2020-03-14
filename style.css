@@ -56,7 +56,6 @@
 	    z-index: 2;
 	    border: 3px #7d7d7d solid;
 	    position: relative;
-	    /*    left: calc(50vw - 10px);*/
 	}
 
 	.timeline {
@@ -75,7 +74,6 @@
 	    list-style-type: none;
 	    display: flex;
 	    flex-direction: row;
-	    /*	    align-items: center;*/
 	}
 
 	.timeline ul li .content {
@@ -101,7 +99,6 @@
 
 	.timeline ul li .date {
 	    width: 45vw;
-	    /*	    padding: 0 20px;*/
 	    font-weight: normal;
 	    margin-top: 6.5px;
 	}
@@ -110,9 +107,7 @@
 	    background-color: #7d7d7d;
 	    width: 60px;
 	    text-align: center;
-	    /*	    padding: 1px;*/
 	    color: whitesmoke;
-	    /* scale: 2; */
 	    font-size: 17px;
 	    border-radius: 50px;
 	}
@@ -135,11 +130,11 @@
 	    border-color: #7d7d7d;
 
 	}
-.timeline ul li .content p::first-letter{
-  font-size: 200%;
-/*  color: #8A2BE2;*/
-    font-style: bold;
-}
+
+	.timeline ul li .content p::first-letter {
+	    font-size: 200%;
+	    font-style: bold;
+	}
 
 	.timeline ul li:nth-child(even) {
 	    flex-direction: row-reverse;
