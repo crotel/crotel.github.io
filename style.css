@@ -112,8 +112,8 @@
 	    text-align: center;
 	    /*	    padding: 1px;*/
 	    color: whitesmoke;
-	    scale: 2;
-	    font-size: 0.5em;
+	    /* scale: 2; */
+	    font-size: 17px;
 	    border-radius: 50px;
 	}
 
@@ -169,14 +169,14 @@
 
 	.timeline ul li:nth-child(odd) .date h4 {
 	    float: left;
-	    padding: 1px 10px 1px 15px;
-	    margin: 0 0 0 20px;
+	    padding: 1px 10px 1px 30px;
+	    margin: -6.5px 0 0 -24px;
 	}
 
 	.timeline ul li:nth-child(even) .date h4 {
 	    float: right;
-	    padding: 1px 15px 1px 10px;
-	    margin: 0 20px 0 0;
+	    padding: 1px 30px 1px 10px;
+	    margin: -6.5px -24px 0 0;
 	}
 
 	.timeline::before {
