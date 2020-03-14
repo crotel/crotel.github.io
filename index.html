@@ -1,98 +1,82 @@
 <!DOCTYPE html>
-<!--<html manifest="./offline.appcache">-->
 <html>
 
 <head>
+<!--    <base href="https://cdn.jsdelivr.net/gh/crotel/dev@latest/">-->
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js').catch(function(error) {
+            navigator.serviceWorker.register('sw.js').catch(function(error) {
                 console.error(error);
             });
         }
     </script>
-    <!-- Site made with Mobirise Website Builder v4.11.6, https://mobirise.com -->
+    <link rel='manifest' href='manifest.json'>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <!--<link rel="shortcut icon" href="assets/images/crotel-1.svg" type="image/x-icon">-->
-    <link rel="shortcut icon" href="assets/favicon/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#595959">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <!--    <link rel="manifest" href="site.webmanifest">-->
+    <link rel="mask-icon" color="#595959" href="safari-pinned-tab.svg">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
     <meta name="description" content="">
     <!-- set viewport width to 660px and disable zooming/scaling -->
-      <meta name="viewport" content="width=100%,user-scalable=no">
-      <!-- tell iOS devices that this app can work in full screen mode. No need for navbars -->
-      <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!--<meta name="viewport" content="width=100%,user-scalable=no">-->
+    <!-- tell iOS devices that this app can work in full screen mode. No need for navbars -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>CROTEL</title>
-    <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-    <link rel="stylesheet" href="assets/tether/tether.min.css">
-    <link rel="stylesheet" href="assets/socicon/css/styles.css">
-    <link rel="stylesheet" href="assets/theme/css/style.css">
-    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-    <script src="/assets/web/assets/js/main.js"></script>
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">-->
-    <link rel="stylesheet" href="./assets/animate/animate.min.css">
-    <!--<link href='https://fonts.loli.net/css?family=Roboto+Slab:200&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>-->
-    <link href='./assets/fonts/font.css' rel='stylesheet' type='text/css'>
-
+    <link rel="preload" as="style" href='font.css' type='text/css'>
+    <link rel="stylesheet" href="font.css">
+    <link rel="preload" as="style" href="style.css" type='text/css'>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section class="header6 cid-rKXD51Cg9x mbr-fullscreen" id="header6-9">
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="mbr-white col-md-10">
 
-                    <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
-                        <iframe href="logo.html" style="border: none;"></iframe><br>
+    <section class="header fullscreen" id="header">
+        <div class="container">
+            <div>
+                <div class="white">
+                    <h1 class="section-title align-center">
                         <span style="font-weight: normal;">
                             CROTEL</span>©</h1>
-                    <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
+                    <p class="text align-center">
                         Nothing is impossible.</p>
                 </div>
             </div>
         </div>
-        <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
-            <a href="#next">
-                <i class="mbri-down mbr-iconfont"></i>
-            </a>
+        <div class="arrow hidden-sm-down" id="readMoreBtn">
+            <svg t="1584066670690" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2012" width="50" height="50">
+                <path d="M768 384l-256 256-256-256z" fill="#181818" p-id="2013"></path>
+            </svg>
         </div>
     </section>
-    <section class="engine"><a href="https://cro.tel">CROTEL©</a></section>
-    <section class="timeline1 cid-rKTOgHIQXi" id="timeline1-3">
+    <section class="content cid-rKTOgHIQXi body" id="content" style="display:none;">
         <div class="container align-center">
-            <h2 class="mbr-section-title pb-3 mbr-fonts-style display-2">Time Line</h2>
-            <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style display-5">Done and doing</h3>
-            <div class="container timelines-container" mbri-timelines="">
-            </div>
+            <div class="container">
+        <h1>Project Timeline</h1>
+        <div class="timeline">
+            <ul>
+            </ul>
+        </div>
+    </div>
         </div>
     </section>
-    <section once="footers" class="cid-rKTPCWDhjn" id="footer7-4">
+    <section once="footers" class="cid-rKTPCWDhjn footers" id="footer" style="display:none;">
         <div class="container">
-            <div class="media-container-row align-center mbr-white">
+            <div class="media-container-row align-center white">
                 <div class="row row-copirayt">
-                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                        © Copyright 2019 Crotel - All Rights Reserved
+                    <p class="text fonts-style white align-center display">
+                        © Copyright 2020 Crotel - All Rights Reserved
                     </p>
                 </div>
             </div>
         </div>
     </section>
-    <script src="assets/web/assets/jquery/jquery.min.js"></script>
-    <script src="assets/popper/popper.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/tether/tether.min.js"></script>
-    <script src="assets/smoothscroll/smooth-scroll.js"></script>
-    <script src="assets/theme/js/script.js"></script>
+    <script src="main.js" await></script>
 </body>
 
 </html>
