@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<base href="https://cdn.jsdelivr.net/gh/crotel/crotel.github.io@v0.6.20200314_beta/">
+<base href="https://cdn.jsdelivr.net/gh/crotel/crotel.github.io@v0.7.20200314_beta/">
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('sw.js').catch(function(error) {
@@ -28,10 +28,10 @@
     <!-- tell iOS devices that this app can work in full screen mode. No need for navbars -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>CROTEL</title>
-    <link rel="preload" as="style" href='font.css' type='text/css'>
-    <link rel="stylesheet" href="font.css">
-    <link rel="preload" as="style" href="style.css" type='text/css'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="style" href='font.min.css' type='text/css'>
+    <link rel="stylesheet" href="font.min.css">
+    <link rel="preload" as="style" href="style.min.css" type='text/css'>
+    <link rel="stylesheet" href="style.min.css">
 </head>
 
 <body>
@@ -76,7 +76,7 @@
             </div>
         </div>
     </section>
-    <script src="main.js" await></script>
+    <script src="main.min.js" await></script>
 </body>
 
 </html>
