@@ -1,183 +1,172 @@
-	* {
-	    font-family: 'Roboto Slab';
-	    margin: 0 auto;
-	}
+ * {
+     font-family: 'Roboto Slab';
+     margin: 0 auto;
+ }
 
-	a {
-	    text-decoration: none;
-	}
+ a {
+     text-decoration: none;
+ }
 
-	section.header {
-	    text-align: center;
-	    height: calc(100vh - 3.7em);
-	    width: 100%;
-	}
+ section.header {
+     text-align: center;
+     height: calc(100vh - 3.7em);
+     width: 100%;
+ }
 
-	section.header > .container {
-	    padding-top: 40vh;
-	    padding-bottom: 10vh;
-	}
+ section.header > .container {
+     padding-top: 40vh;
+     padding-bottom: 10vh;
+ }
 
-	#readMoreBtn {
-	    bottom: 5vh;
-	    position: fixed;
-	    padding-left: calc(50% - 25px);
-	}
+ #readMoreBtn {
+     bottom: 5vh;
+     position: fixed;
+     padding-left: calc(50% - 25px);
+ }
 
-	section.content {
-	    padding-left: 5vw;
-	    padding-right: 5vw;
-	    min-height: calc(100vh - 3.7em - 10vh);
-	}
+ section.content {
+     padding-left: 5vw;
+     padding-right: 5vw;
+     min-height: calc(100vh - 3.7em - 10vh);
+ }
 
-	section.footers {
-	    text-align: center;
-	    padding-top: 2em;
-	    font-size: 0.7em;
-	    padding-bottom: 1em;
-	    color: rgb(136, 136, 136);
-	}
+ section.footers {
+     text-align: center;
+     padding-top: 2em;
+     font-size: 0.7em;
+     padding-bottom: 1em;
+     color: rgb(136, 136, 136);
+ }
 
-	section.content h1 {
-	    text-align: center;
-	    color: #7d7d7d;
-	    border-width: 0 2px 0 2px;
-	    border-color: #7d7d7d;
-	    border-style: solid;
-	    width: 10em;
-	    margin-bottom: 2em;
-	}
+ section.content h1 {
+     text-align: center;
+     color: #7d7d7d;
+     border-width: 0 2px 0 2px;
+     border-color: #7d7d7d;
+     border-style: solid;
+     width: 10em;
+     margin-bottom: 2em;
+ }
 
-	.point {
-	    min-width: 20px;
-	    height: 20px;
-	    background-color: #ffffff;
-	    border-radius: 100%;
-	    z-index: 2;
-	    border: 3px #7d7d7d solid;
-	    position: relative;
-	}
+ .point {
+     min-width: 20px;
+     height: 20px;
+     background-color: #ffffff;
+     border-radius: 100%;
+     z-index: 2;
+     border: 3px #7d7d7d solid;
+     position: relative;
+     margin-top: 9px;
+ }
 
-	.timeline {
-	    position: relative;
-	    margin: 0 auto;
-	    width: 90vw;
+ .timeline {
+     position: relative;
+     margin: 0 auto;
+     width: 90vw;
+ }
 
-	}
+ .timeline ul {
+     padding-inline-start: 0;
+ }
 
-	.timeline ul {
-	    padding-inline-start: 0;
-	}
+ .timeline ul li {
+     margin-bottom: 50px;
+     list-style-type: none;
+     display: flex;
+     flex-direction: row;
+ }
 
-	.timeline ul li {
-	    margin-bottom: 50px;
-	    list-style-type: none;
-	    display: flex;
-	    flex-direction: row;
-	}
+ .timeline ul li .content {
+     width: 45vw;
+ }
 
-	.timeline ul li .content {
-	    width: 45vw;
-	    /*	    padding: 0 20px;*/
-	}
+ .timeline ul li:nth-child(odd) .content {
+     padding-left: 0;
+ }
 
-	.timeline ul li:nth-child(odd) .content {
-	    padding-left: 0;
-	}
+ .timeline ul li:nth-child(odd) .date {
+     padding-right: 0;
+ }
 
-	.timeline ul li:nth-child(odd) .date {
-	    padding-right: 0;
-	}
+ .timeline ul li:nth-child(even) .content {
+     padding-right: 0;
+ }
 
-	.timeline ul li:nth-child(even) .content {
-	    padding-right: 0;
-	}
+ .timeline ul li:nth-child(even) .date {
+     padding-left: 0;
+ }
 
-	.timeline ul li:nth-child(even) .date {
-	    padding-left: 0;
-	}
+ .timeline ul li .date {
+     width: 45vw;
+     font-weight: normal;
+ }
 
-	.timeline ul li .date {
-	    width: 45vw;
-	    font-weight: normal;
-	    margin-top: 6.5px;
-	}
+ .timeline ul li .date h4 {
+     background-color: #7d7d7d;
+     text-align: center;
+     color: whitesmoke;
+     font-size: 17px;
+     border-radius: 50px;
+ }
 
-	.timeline ul li .date h4 {
-	    background-color: #7d7d7d;
-	    text-align: center;
-	    color: whitesmoke;
-	    font-size: 17px;
-	    border-radius: 50px;
-	}
+ .timeline ul li .content h3 {
+     padding: 10px 20px;
+     background-color: #7d7d7d;
+     margin-bottom: 0;
+     text-align: center;
+     color: whitesmoke;
+ }
 
+ .timeline ul li .content p {
+     padding: 10px 20px;
+     background-color: #ffffff;
+     margin-top: 0;
+     text-align: left;
+     border-style: solid;
+     border-color: #7d7d7d;
+ }
 
-	.timeline ul li .content h3 {
-	    padding: 10px 20px;
-	    background-color: #7d7d7d;
-	    margin-bottom: 0;
-	    text-align: center;
-	    color: whitesmoke;
-	}
+ .timeline ul li:nth-child(even) {
+     flex-direction: row-reverse;
+ }
 
-	.timeline ul li .content p {
-	    padding: 10px 20px;
-	    background-color: #ffffff;
-	    margin-top: 0;
-	    text-align: left;
-	    border-style: solid;
-	    border-color: #7d7d7d;
+ .timeline ul li:nth-child(odd) .content p {
+     margin-right: -14.2px;
+     border-width: 0 0 2px 2px;
+ }
 
-	}
+ .timeline ul li:nth-child(even) .content p {
+     margin-left: -14.2px;
+     border-width: 0 2px 2px 0;
+ }
 
-	.timeline ul li .content p::first-letter {
-	    font-size: 200%;
-	    font-style: bold;
-	}
+ .timeline ul li:nth-child(odd) .content h3 {
+     margin-right: -14.2px;
+     border-top-left-radius: 10px;
+ }
 
-	.timeline ul li:nth-child(even) {
-	    flex-direction: row-reverse;
-	}
+ .timeline ul li:nth-child(even) .content h3 {
+     margin-left: -14.2px;
+     border-top-right-radius: 10px;
+ }
 
-	.timeline ul li:nth-child(odd) .content p {
-	    margin-right: -14.2px;
-	    border-width: 0 0 2px 2px;
-	}
+ .timeline ul li:nth-child(odd) .date h4 {
+     float: left;
+     padding: 10px 20px 12px 40px;
+     margin: 0 0 0 -35px;
+ }
 
-	.timeline ul li:nth-child(even) .content p {
-	    margin-left: -14.2px;
-	    border-width: 0 2px 2px 0;
-	}
+ .timeline ul li:nth-child(even) .date h4 {
+     float: right;
+     padding: 10px 40px 12px 20px;
+     margin: 0 -35px 0 0;
+ }
 
-	.timeline ul li:nth-child(odd) .content h3 {
-	    margin-right: -14.2px;
-	    border-top-left-radius: 10px;
-
-	}
-
-	.timeline ul li:nth-child(even) .content h3 {
-	    margin-left: -14.2px;
-	    border-top-right-radius: 10px;
-
-	}
-
-	.timeline ul li:nth-child(odd) .date h4 {
-	    float: left;
-	    padding: 1px 10px 1px 30px;
-	    margin: -6.5px 0 0 -24px;
-	}
-
-	.timeline ul li:nth-child(even) .date h4 {
-	    float: right;
-	    padding: 1px 30px 1px 10px;
-	    margin: -6.5px -24px 0 0;
-	}
-
-	.timeline::before {
-	    content: "";
-	    position: absolute;
-	    height: 100%;
-	    width: 2px;
-	    left: calc(45vw - 1px);
-	    background-color: #7d7d7d;
-	}
+ .timeline::before {
+     content: "";
+     position: absolute;
+     height: 100%;
+     width: 2px;
+     left: calc(45vw - 1px);
+     background-color: #7d7d7d;
+ }
