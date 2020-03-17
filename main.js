@@ -27,11 +27,12 @@
                  return [year, month, day].join('-');
              }
              var publishTime = formatDate(json.posts[i].published_at);
+             var filterUrl = /((www\.)?[a-zA-Z0-9_]{1,}(\-)?[a-zA-Z0-9_]{1,}\.[a-z]{2,}\b([a-zA-Z0-9@:%_\+.~#?&//=]*)|(www\.)?[a-zA-Z0-9_]{1,}\.[a-z]{2,}\b([a-zA-Z0-9@:%_\+.~#?&//=]*))/g;
              var preRLB1 = json.posts[i].plaintext.replace(/\?+\?/g, '<span class="todo"></span>');
              var preRLB2 = preRLB1.replace(/\++\+/g, '<span class="update"></span>');
              var preRLB3 = preRLB2.replace(/\!+\!/g, '<span class="attention"></span>');
              var replaceLineBreak = preRLB3.replace(/\n+\n/g, '<br><br>');
-             var getTitleUrl = new RegExp(/((www\.)?[a-zA-Z0-9_]{1,}(\-)?[a-zA-Z0-9_]{1,}\.[a-z]{2,}\b([a-zA-Z0-9@:%_\+.~#?&//=]*)|(www\.)?[a-zA-Z0-9_]{1,}\.[a-z]{2,}\b([a-zA-Z0-9@:%_\+.~#?&//=]*))/g);
+             var getTitleUrl = new RegExp(filterUrl);             
              var plaintext, titleUrl;
              function gUrl(){
                  var r = replaceLineBreak
