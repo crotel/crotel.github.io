@@ -15,7 +15,6 @@
   ],
   "start_url": "index.html",
   "background_color": "#3367D6",
-  "display": "fullscreen",
-  //"scope": "/maps/",
+  "display": "fullscreen", 
   "theme_color": "#3367D6"
 }
