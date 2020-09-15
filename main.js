@@ -1,5 +1,5 @@
 const cryear = (new Date()).getFullYear();
-document.querySelector("section.footers  p").innerHTML = `© Copyright ${cryear} Crotel - All Rights Reserved <br> Powered by Ghost + Github + jsDelivr + Cloudflare Workers`;
+document.querySelector("section.footers  p").innerHTML = `© Copyright ${cryear} CROTEL - All Rights Reserved <br> Powered by JSON + Github + jsDelivr + Cloudflare Workers`;
 document.getElementById("readMoreBtn").addEventListener("click", function () {
  document.getElementById("header").setAttribute('style', 'display:none;');
  document.getElementById("content").setAttribute('style', 'display:block;padding-top:10vh;');
