@@ -1,32 +1,46 @@
-# Fulrest. 
+# FUL.REST. 
+- ### DESCRIPTION  
 
-A Front-End fitup Restapi + Github + jsDelivr + Cloudflare Workers.
+	Standalone CMS with Dashboard Client.
+	  
+		Just using the client.  
+		Or kept server and client yourself.
 
-## BASE STRUCTURE AND UPDATE.
+	## 
 
-- [x] No superfluous external css or js.
-- [x] Pure JavaScript.
-- [x] Ghost handle rest api.
-- [x] Github host static files which like js, css and html.
-- [x] jsDelivr handle the static files in Github for self CDN output.
-- [x] Cloudflare Workers handle fetch json, combine with CDN output html for final viewpoint.
+	 ### `re-Design` : 
+	- [x] **Back-end**: Nodejs + mqtt + levelDB + ipfs.
+	- [x] **Front-end**: HTML + JSON.
+	- [x] **Dashboard**: Electron.
+
+ ## BASE STRUCTURE AND UPDATE.  
+
+- **No superfluous external .CSS or .JS**.  
+- **Pure JavaScript**.  
+- *~~<em style="color:#777;">Ghost handle rest api~~.</em><sup style="color:#777;">removed</sup>*  
+- *~~<em style="color:#777;">jsDelivr handle the static files with Github as CDN~~.</em><sup style="color:#777;">removed</sup>*  
+- *~~<em style="color:#777;">Github host static files which like js, css and html~~.</em><sup style="color:#777;">removed</sup>*  
+- *~~<em style="color:#777;">Cloudflare Workers handle fetch json, combine with CDN output html for final viewpoint~~.</em><sup style="color:#777;">removed</sup>*  
+- **Statics via `Cloudflare Pages` with `github`.** *<sup style="color:red;">new</sup>*  
+- **Data via `levelDB` + `ipfs`.** *<sup style="color:red;">new</sup>*  
+- **Date-Transfer via `mqtt`.** *<sup style="color:red;">new</sup>*  
+- **Admin Dashboard as client via `Electron`.** *<sup style="color:red;">new</sup>*  
+- **Output HTML + JSON.** *<sup style="color:red;">new</sup>*  
+- **Plugins** *<sup style="color:red;">new</sup>*  
+	- a p2p HLS player.  
+	- some tools  
+	- ...   
+
+	##   
   
   
 ## TODO
-- [ ] profile, signup, login and submit.
-- [ ] front-end editable.
-- [ ] standalone backend cover ghost.
-- [ ] MFA auth.
-- [ ] Progressive Web App (PWA). 
-- [ ] ? render rest api content for solo json files. ` static files was the only better choice now for cache. except other cover it.`
-  - [ ] ? json split as month or week or day.
-  - [ ] ? automatic update in fixed time or while new posts.
-- [ ] ? p2p.
+- [ ] Account signup, signin, reset and delete.
+- [ ] Front-end realtime notices .
+- [ ] Secure MFA auth.
+- [ ] HTTP/3 (Quic). 
 
 
 
-* * *
-##### Note: Cloudflare Workers was a cool thing.
-  1. Work as a second proxy layer before nginx, 
-  2. Kind of like a function-as-a-service layer and perform a little logic processing.
-  3. Help hidden some secret key which like rest api content key or auth key. 
+ #   
+   <em style="text-align:right;">**`[Update march, 2021]`**</em>
