@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- 
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" color="#595959" href="/safari-pinned-tab.svg">
+        <meta name="msapplication-TileColor" content="#2d89ef">
+        <meta name="theme-color" content="#ffffff">
+    -->
+    <meta name="description" content="o'clock">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!--<script src="clock.js"></script>
+    <script src="anyCore.js"></script>
+    <script src="anyUiMain.js"></script>
+    <script src="anyUiInit.js"></script>-->
+    <script>
+        customElements.define("e-clock", class eClock extends HTMLElement {
+            #shadowroot;
+            constructor() {
+                super().attachShadow({
+                    mode: "open"
+                }).innerHTML = `<style>
+:host{margin: 0;padding: 0;object-fit: scale-down;position: fixed;right: 0;top: 0;filter: drop-shadow(0 0 2px #777);}
+:host *{shape-rendering: geometricPrecision;z-index:1;}
+#clock {stroke: black;stroke-linecap: round;fill: #fff;}
+#clock * { user-select: none;}
+#clock .face { stroke-width: 0; }    
+#clock .ticks { stroke: #777;stroke-width: .5; }   
+#clock .ticks.minutes { stroke-width: .2; }
+#clock .ticks.minutes.m1 { stroke-width: .2; }
+#clock .hands .hourhand { stroke-width: 3; }   
+#clock .hands .minutehand { stroke-width: 2; }   
+#clock .hands .sechand{ stroke-width: 1;}
+#clock .hands.shadow{transform: translate(2px, 2px);}
+#clock .hands.shadow > *{opacity: .5;filter: blur(1.5px);z-index: -2;position: absolute;}
+#clock .numbers .block.date{
+font-family: monospace;
+font-weight: 100;
+font-size: .5rem;
+z-index: 99;
+fill: #fff;
+background: transparent;
+text-anchor: middle;
+box-sizing: border-box;
+-webkit-font-smoothing: antialiased;
+}
+#clock .numbers rect{fill: #777;z-index: 99;stroke-linecap: unset;}
+#clock .numbers {font-family: monospace,sans-serif; font-size: 9px; font-weight: unset;text-anchor: middle; stroke: none; fill: black;}
+</style>
+<svg id="clock" viewBox="0 0 100 100" width="150" height="150">
+    <circle class="face" cx="50" cy="50" r="47"/>  
+    <g class="ticks">
+      <line x1='50' y1='5.000' x2='50.00' y2='10.00'/>
+      <line x1='72.50' y1='11.03' x2='70.00' y2='15.36'/>
+      <line x1='88.97' y1='27.50' x2='84.64' y2='30.00'/>
+      <line x1='88.97' y1='72.50' x2='84.64' y2='70.00'/>
+      <line x1='72.50' y1='88.97' x2='70.00' y2='84.64'/>
+      <line x1='50.00' y1='95.00' x2='50.00' y2='90.00'/>
+      <line x1='27.50' y1='88.97' x2='30.00' y2='84.64'/>
+      <line x1='11.03' y1='72.50' x2='15.36' y2='70.00'/>
+      <line x1='5.000' y1='50.00' x2='10.00' y2='50.00'/>
+      <line x1='11.03' y1='27.50' x2='15.36' y2='30.00'/>
+      <line x1='27.50' y1='11.03' x2='30.00' y2='15.36'/>
+    </g>
+    <g class="numbers"> 
+      <text x="68" y="24">1</text>
+      <text x="80" y="36">2</text>
+      <rect width="14" x="79" height="10" y="44" rx="3" ry="3"></rect>
+	  <text x="86" y="52" class="block date" >0</text>
+      <text x="80" y="70">4</text>
+      <text x="68" y="83">5</text>
+      <text x="50" y="88">6</text>
+      <text x="33" y="83">7</text>
+      <text x="20" y="70">8</text>
+      <text x="15" y="53">9</text>
+      <text x="22" y="36">10</text>
+      <text x="34" y="24">11</text>
+      <text x="50" y="18">12</text>
+    </g>
+    <g class="hands">   
+      <line class="hourhand" x1="50" y1="50" x2="50" y2="25" />
+      <line class="minutehand" x1="50" y1="50" x2="50" y2="20"/>
+      <line class="sechand" x1="50" y1="50" x2="50" y2="20"/>
+    </g>
+	<g class="hands shadow">   
+      <line class="hourhand" x1="50" y1="50" x2="50" y2="25" />
+      <line class="minutehand" x1="50" y1="50" x2="50" y2="20" />
+      <line class="sechand" x1="50" y1="50" x2="50" y2="20"/>
+    </g>
+		</svg>`;
+                this.#shadowroot = this.shadowRoot;
+
+            }
+            connectedCallback() {
+                console.log("custom element clock added to page.");
+                const shadowroot = this.#shadowroot;
+                ((date) => {
+                    this.#shadowroot.querySelector(".block.date").innerHTML = date.length == 1 ? [0, date].join("") : date;
+                }
+                )(new Date().getDate().toString());
+                (function updateClock() {
+                    // Update the SVG clock graphic to show current time
+                    let now = new Date();
+                    // Current time
+                    let sec = now.getSeconds();
+                    // Seconds
+                    let min = now.getMinutes() + sec / 60;
+                    // Fractional minutes
+                    let hour = (now.getHours() % 12) + min / 60;
+                    // Fractional hours
+                    let secangle = sec * 6;
+                    let minangle = min * 6;
+                    // 6 degrees per minute
+                    let hourangle = hour * 30;
+                    // 30 degrees per hour
+                    ((...functions) => (initialValue) => functions.reduce((acc, fn) => acc.then(fn), Promise.resolve(initialValue)))([Array.from(shadowroot.querySelectorAll(".sechand")).map(r => r.setAttribute("transform", `rotate(${secangle},50,50)`)), Array.from(shadowroot.querySelectorAll(".minutehand")).map(r => r.setAttribute("transform", `rotate(${minangle},50,50)`)), Array.from(shadowroot.querySelectorAll(".hourhand")).map(r => r.setAttribute("transform", `rotate(${hourangle},50,50)`))])
+
+                    setTimeout(updateClock, 1000);
+                }());
+                // console.log(this.self)
+            }
+
+            disconnectedCallback() {
+                console.log("Custom element removed from page.");
+            }
+
+            adoptedCallback() {
+                console.log("Custom element moved to new page.");
+            }
+
+            attributeChangedCallback(name, oldValue, newValue) {
+                console.log(`Attribute ${name} has changed.`);
+            }
+        })
+    </script>
+    <title>o'clock</title>
+    <!--<link rel="stylesheet" href="style.css" type="text/css"/>-->
+</head>
+
+<body>
+    <e-clock></e-clock>
+    <!-- <object class="plugin clock animate" type="text/html" data="clock.html" width="100px" height="100px" title="clock" style="object-fit: scale-down;position: fixed;right: 0;top: 0;"></object> -->
+    <!--<div id="current">Frontend Developing via Sources Local Overrides. open DevTools and coding.
+    </div>
+    <template id="tfooter">
+        <style>
+            p {
+                padding: 8px;
+                background-color: plum;
+            }
+        </style>
+        <p>I'm in the shadow DOM.</p>
+    </template>
+    <script src="anyHandleMain.js"></script>
+    <script src="anyHandleInit.js"></script>-->
+</body>
+
+</html>
